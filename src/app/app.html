@@ -1,0 +1,9 @@
+<nav class="navbar" style="display: flex; gap: 15px; padding: 15px; background: #eee;">
+  <a [routerLink]="['/home']" routerLinkActive="active">Home</a>
+  <a [routerLink]="['/kanto']" routerLinkActive="active">Kanto</a>
+  <a [routerLink]="['/johto']" routerLinkActive="active">Johto</a>
+  <a [routerLink]="['/hoenn']" routerLinkActive="active">Hoenn</a>
+</nav>
+
+<!-- The router-outlet dynamically displays the selected component -->
+<router-outlet></router-outlet>
