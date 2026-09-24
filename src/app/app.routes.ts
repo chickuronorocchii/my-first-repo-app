@@ -5,7 +5,7 @@ import { JohtoComponent } from './johto/johto.component';
 import { HoennComponent } from './hoenn/hoenn.component';
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' }, 
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'kanto', component: KantoComponent },
   { path: 'johto', component: JohtoComponent },

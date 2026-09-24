@@ -14,6 +14,7 @@ import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
         <a routerLink="/home" routerLinkActive="active">Home</a>
         <a routerLink="/kanto" routerLinkActive="active">Kanto Region</a>
         <a routerLink="/johto" routerLinkActive="active">Johto Region</a>
+        <a routerLink="/hoenn" class="nav-btn">Hoenn Region</a>
       </nav>
 
       <hr style="margin: 20px 0; border: 1px solid #ccc;">
