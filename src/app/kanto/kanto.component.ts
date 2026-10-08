@@ -1,46 +1,31 @@
 import { Component } from '@angular/core';
-import { GymLeader } from '../models/gym-leader.model';
-import { LeaderInfoComponent } from '../components/leader-info.component';
+
 @Component({
   selector: 'app-kanto',
   standalone: true,
-  imports: [LeaderInfoComponent], // Add it to imports!
   template: `
-    <div class="region-container">
-      <h2>Kanto Region Gym Leaders</h2>
-      <div class="leader-grid">
-        @for (leader of kantoLeaders; track leader.name) {
-          <!-- Using the child component and passing data in with [leader] -->
-          <app-leader-info 
-            [leader]="leader" 
-            (monologueClicked)="logInteraction($event)">
-          </app-leader-info>
-        }
+    <div style="font-family: sans-serif; text-align: center; width: 100%;">
+      <h1 style="color: #111; margin-bottom: 25px;">Kanto Region Gym Leaders</h1>
+      <div style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;">
+        
+        <!-- Brock Card -->
+        <div style="flex: 1 1 300px; max-width: 320px; border: 2px solid #7f8c8d; border-radius: 12px; padding: 20px; background: #95a5a6; color: white; box-shadow: 0 4px 8px rgba(0,0,0,0.1); text-align: left;">
+          <h2 style="margin: 0 0 10px 0; border-bottom: 2px solid rgba(255,255,255,0.3); padding-bottom: 10px;">Brock (Age: 15)</h2>
+          <p style="margin: 8px 0;"><strong>📍 Location:</strong> Pewter City</p>
+          <p style="margin: 8px 0;"><strong>🛡️ Badge:</strong> Boulder Badge</p>
+          <p style="margin: 8px 0;"><strong>Pokémon Team:</strong> Geodude (Lv. 12), Onix (Lv. 14)</p>
+        </div>
+
+        <!-- Misty Card -->
+        <div style="flex: 1 1 300px; max-width: 320px; border: 2px solid #2980b9; border-radius: 12px; padding: 20px; background: #3498db; color: white; box-shadow: 0 4px 8px rgba(0,0,0,0.1); text-align: left;">
+          <h2 style="margin: 0 0 10px 0; border-bottom: 2px solid rgba(255,255,255,0.3); padding-bottom: 10px;">Misty (Age: 13)</h2>
+          <p style="margin: 8px 0;"><strong>📍 Location:</strong> Cerulean City</p>
+          <p style="margin: 8px 0;"><strong>🛡️ Badge:</strong> Cascade Badge</p>
+          <p style="margin: 8px 0;"><strong>Pokémon Team:</strong> Staryu (Lv. 18), Starmie (Lv. 21)</p>
+        </div>
+
       </div>
     </div>
-  `,
-  styles: [`
-    .region-container { padding: 20px; font-family: Arial, sans-serif; }
-    .leader-grid { display: flex; flex-wrap: wrap; gap: 20px; }
-  `]
+  `
 })
-export class KantoComponent {
-  kantoLeaders: GymLeader[] = [
-    { 
-      name: 'Brock', age: 15, location: 'Pewter City', badge: 'Boulder Badge', type: 'Rock', color: '#808080', 
-      monologue: "The stage is set, and my boulders are ready. Perfection isn't good enough.", 
-      team: [{ name: 'Geodude', level: 12 }, { name: 'Onix', level: 14 }] 
-    },
-    { 
-      name: 'Misty', age: 13, location: 'Cerulean City', badge: 'Cascade Badge', type: 'Water', color: '#4682B4', 
-      monologue: "Art requires a certain cruelty. My water Pokémon will wash away your illusions.", 
-      team: [{ name: 'Staryu', level: 18 }, { name: 'Starmie', level: 21 }] 
-    }
-    // Add the rest of your Kanto leaders here, making sure to include their 'age' and 'monologue' strings!
-  ];
-
-  // This function catches the @Output event from the child component
-  logInteraction(leaderName: string) {
-    console.log(`The audience is listening to ${leaderName}'s performance...`);
-  }
-}
+export class KantoComponent {}
